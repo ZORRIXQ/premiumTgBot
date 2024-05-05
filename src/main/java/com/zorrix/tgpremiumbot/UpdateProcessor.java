@@ -11,8 +11,6 @@ public class UpdateProcessor {
     public void registerBot(Bot bot) throws TelegramApiException {
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
 
-        System.out.println(new TelegramConfig().getBotName());
-
         try{
             telegramBotsApi.registerBot(bot);
             System.out.println("bot is running!");

@@ -6,7 +6,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 @Setter
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -25,6 +27,8 @@ public class TelegramConfig {
     String wtfText;
     @Value("${commands.start-command}")
     String startCommand;
+
+    public TelegramConfig() {}
 
     @PostConstruct
     public void init() {
