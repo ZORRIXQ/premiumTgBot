@@ -1,0 +1,17 @@
+telegram:
+  api-url: "https://api.telegram.org/"
+  bot-name: "TG Premium"
+  bot-uri: ""
+  bot-token: "6797309884:AAG9ZSyBqmvsZUNME2WS87QlL0v73Ylmgv0"
+message:
+  start-message: "hello!"
+  too-big-voice:
+    text: "текст сообщения в ответ на отправку слишком длинного голосового сообщения (лимит - 10 минут)"
+  illegal-message:
+    text: "illegal message!"
+  wtf:
+    text: "wtf"
+commands:
+  start-command: "/start"
+assembly-ai:
+  api-key: "93d5b12ab34f402187645c0e5cdb5184"
