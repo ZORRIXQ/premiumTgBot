@@ -12,6 +12,7 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration
 @ComponentScan("com.zorrix.tgpremiumbot")
 @AllArgsConstructor
+@PropertySource("classpath:/application.yaml")
 public class SpringConfig {
 
     @Bean

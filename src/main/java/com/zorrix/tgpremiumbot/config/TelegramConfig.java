@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
+@PropertySource("classpath:/application.yaml")
 @Component
 @Setter @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
