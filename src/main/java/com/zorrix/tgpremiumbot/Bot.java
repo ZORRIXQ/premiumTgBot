@@ -13,7 +13,6 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-@Component
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -43,22 +42,16 @@ public class Bot extends TelegramLongPollingBot {
     private Bot(){
         this.config = new TelegramConfig();
         this.messageHandler = new MessageHandler();
-
-        System.out.println(config.getBotName());
-        this.botName = config.getBotName();
-        System.out.println(config.getBotToken());
-        this.botToken = config.getBotToken();
-        this.tooBigVoiceText = config.getTooBigVoiceText();
-        this.illegalMessageText = config.getIllegalMessageText();
-        this.wtfText = config.getWtfText();
-        updateProcessor = new UpdateProcessor();
     }
 
+    public static Bot createEmptyBot(){
+        return new Bot();
+    }
 
     @Override
     public void onUpdateReceived(Update update) {
         try {
-            System.out.print("new message");
+            System.out.print("new message: " + update.getMessage().getText() + "\n");
             messageHandler.handle(update, this);
         } catch (TelegramApiException e) {
             throw new RuntimeException(e);

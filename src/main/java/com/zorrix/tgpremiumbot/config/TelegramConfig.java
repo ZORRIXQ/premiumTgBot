@@ -1,16 +1,16 @@
 package com.zorrix.tgpremiumbot.config;
 
 import jakarta.annotation.PostConstruct;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
-@Setter
-@Getter
+@Setter @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class TelegramConfig {
     @Value("${telegram.api-url}")
@@ -26,13 +26,7 @@ public class TelegramConfig {
     @Value("${message.wtf.text}")
     String wtfText;
     @Value("${commands.start-command}")
+    String startMessage;
+    @Value("${commands.start-command}")
     String startCommand;
-
-    public TelegramConfig() {}
-
-    @PostConstruct
-    public void init() {
-        System.out.println("URL: " + apiUrl);
-        System.out.println(botName);
-    }
 }
