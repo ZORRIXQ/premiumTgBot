@@ -13,6 +13,8 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import java.io.IOException;
+
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -53,7 +55,7 @@ public class Bot extends TelegramLongPollingBot {
         try {
             System.out.print("new message: " + update.getMessage().getText() + "\n");
             messageHandler.handle(update, this);
-        } catch (TelegramApiException e) {
+        } catch (TelegramApiException | IOException e) {
             throw new RuntimeException(e);
         }
 

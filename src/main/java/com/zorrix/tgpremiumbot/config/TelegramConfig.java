@@ -25,4 +25,5 @@ public class TelegramConfig {
     String startMessage = "hello!";
 //    @Value("/start")
     String startCommand = "/start";
+    String assemblyAIKey = "93d5b12ab34f402187645c0e5cdb5184";
 }
