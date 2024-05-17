@@ -57,7 +57,6 @@ public class Bot extends TelegramLongPollingBot {
             throw new RuntimeException(e);
         }
 
-
     }
 
     public void executeTextMessage(Long chatId, String text) throws TelegramApiException {

@@ -24,8 +24,8 @@ public class MessageHandler {
     AnnotationConfigApplicationContext context;
 
     public MessageHandler(){
-        context = new AnnotationConfigApplicationContext(SpringConfig.class);
-        this.config = context.getBean("getConfig", TelegramConfig.class);
+//        context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        this.config = new TelegramConfig();
     }
 
     public void handle(@NotNull Update update, Bot bot) throws WrongMessageException, TelegramApiException {
@@ -46,7 +46,7 @@ public class MessageHandler {
         } else{
             bot.executeTextMessage(message.getChatId(), message.getText());
 
-            throw new WrongMessageException();
+            throw new WrongMessageException("Wrong message!");
         }
     }
 }

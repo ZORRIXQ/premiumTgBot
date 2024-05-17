@@ -1,33 +1,28 @@
 package com.zorrix.tgpremiumbot.config;
 
-import jakarta.annotation.PostConstruct;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
-@PropertySource("classpath:/application.yaml")
-@Component
 @Setter @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class TelegramConfig {
-    @Value("${telegram.api-url}")
-    String apiUrl;
-    @Value("${telegram.bot-name}")
-    String botName;
-    @Value("${telegram.bot-token}")
-    String botToken;
-    @Value("${message.too-big-voice.text}")
-    String tooBigVoiceText;
-    @Value("${message.illegal-message.text}")
-    String illegalMessageText;
-    @Value("${message.wtf.text}")
-    String wtfText;
-    @Value("${commands.start-command}")
-    String startMessage;
-    @Value("${commands.start-command}")
-    String startCommand;
+//    @Value("https://api.telegram.org/")
+    String apiUrl = "https://api.telegram.org/";
+//    @Value("TG PREMIUM")
+    String botName = "TG PREMIUM";
+//    @Value("6797309884:AAG9ZSyBqmvsZUNME2WS87QlL0v73Ylmgv0")
+    String botToken = "6797309884:AAG9ZSyBqmvsZUNME2WS87QlL0v73Ylmgv0";
+//    @Value("текст сообщения в ответ на отправку слишком длинного голосового сообщения (лимит - 10 минут)")
+    String tooBigVoiceText = "текст сообщения в ответ на отправку слишком длинного голосового сообщения (лимит - 10 минут)";
+//    @Value("illegal message!")
+    String illegalMessageText = "illegal message!";
+//    @Value("wtf")
+    String wtfText = "wtf";
+//    @Value("hello!")
+    String startMessage = "hello!";
+//    @Value("/start")
+    String startCommand = "/start";
 }
